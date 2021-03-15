@@ -8,10 +8,14 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
-
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.setTabBarItems()
+    }
+    // MARK: - Methods
+    private func setTabBarItems() {
         let main = MainViewController()
         let second = UINavigationController(rootViewController: PersonViewController())
         

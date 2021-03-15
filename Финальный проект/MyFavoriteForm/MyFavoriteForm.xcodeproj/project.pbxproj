@@ -27,6 +27,7 @@
 		755A211E25E4EC8F0060084C /* BasicScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A211D25E4EC8F0060084C /* BasicScrollViewController.swift */; };
 		755A213525E4FFBE0060084C /* BasicViewOneStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755A213425E4FFBE0060084C /* BasicViewOneStack.swift */; };
 		7561974B25F3AAAC0040CA25 /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7561974A25F3AAAC0040CA25 /* Date+Ex.swift */; };
+		7573A42325FA348000512262 /* HealthKitSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7573A42225FA348000512262 /* HealthKitSetup.swift */; };
 		75754EEB25E026E600374A42 /* WaterProgress+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75754EEA25E026E600374A42 /* WaterProgress+Label.swift */; };
 		75754EF425E02CF400374A42 /* MainViewWaterAndButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75754EF325E02CF400374A42 /* MainViewWaterAndButtons.swift */; };
 		75754EFB25E03EF400374A42 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75754EFA25E03EF400374A42 /* TabBarController.swift */; };
@@ -42,6 +43,9 @@
 		75B8C41C25DBCA78004EA823 /* BasicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B8C41B25DBCA78004EA823 /* BasicView.swift */; };
 		75B8C42025DBCA90004EA823 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B8C41F25DBCA90004EA823 /* CustomButton.swift */; };
 		75B8C42325DBCAAA004EA823 /* CustomAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B8C42225DBCAAA004EA823 /* CustomAuthView.swift */; };
+		75BEB8D825FB88D800A36C2D /* AuthoriseAlertHealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BEB8D725FB88D800A36C2D /* AuthoriseAlertHealthKit.swift */; };
+		75BEB8DB25FB9A0F00A36C2D /* ProfileDataHealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BEB8DA25FB9A0F00A36C2D /* ProfileDataHealthKit.swift */; };
+		75BEB8DF25FD182A00A36C2D /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BEB8DE25FD182A00A36C2D /* String+Ex.swift */; };
 		75C2538225EBABD0003244D0 /* FoodModelFromFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C2538125EBABD0003244D0 /* FoodModelFromFileManager.swift */; };
 		75C2538525EBC246003244D0 /* CurrentAndNeedingEnergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C2538425EBC246003244D0 /* CurrentAndNeedingEnergy.swift */; };
 		75C2538825EBC2D1003244D0 /* CurrentValueFromFM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C2538725EBC2D1003244D0 /* CurrentValueFromFM.swift */; };
@@ -81,6 +85,7 @@
 		755A211D25E4EC8F0060084C /* BasicScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicScrollViewController.swift; sourceTree = "<group>"; };
 		755A213425E4FFBE0060084C /* BasicViewOneStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewOneStack.swift; sourceTree = "<group>"; };
 		7561974A25F3AAAC0040CA25 /* Date+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
+		7573A42225FA348000512262 /* HealthKitSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetup.swift; sourceTree = "<group>"; };
 		75754EEA25E026E600374A42 /* WaterProgress+Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WaterProgress+Label.swift"; sourceTree = "<group>"; };
 		75754EF325E02CF400374A42 /* MainViewWaterAndButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewWaterAndButtons.swift; sourceTree = "<group>"; };
 		75754EFA25E03EF400374A42 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -96,6 +101,9 @@
 		75B8C41B25DBCA78004EA823 /* BasicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicView.swift; sourceTree = "<group>"; };
 		75B8C41F25DBCA90004EA823 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		75B8C42225DBCAAA004EA823 /* CustomAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAuthView.swift; sourceTree = "<group>"; };
+		75BEB8D725FB88D800A36C2D /* AuthoriseAlertHealthKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthoriseAlertHealthKit.swift; sourceTree = "<group>"; };
+		75BEB8DA25FB9A0F00A36C2D /* ProfileDataHealthKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataHealthKit.swift; sourceTree = "<group>"; };
+		75BEB8DE25FD182A00A36C2D /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
 		75C2538125EBABD0003244D0 /* FoodModelFromFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodModelFromFileManager.swift; sourceTree = "<group>"; };
 		75C2538425EBC246003244D0 /* CurrentAndNeedingEnergy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAndNeedingEnergy.swift; sourceTree = "<group>"; };
 		75C2538725EBC2D1003244D0 /* CurrentValueFromFM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentValueFromFM.swift; sourceTree = "<group>"; };
@@ -146,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				7547385A25D943B8006180BC /* AppDelegate.swift */,
+				7547386F25D943D9006180BC /* MyFavoriteForm.entitlements */,
 				7547386525D943BA006180BC /* LaunchScreen.storyboard */,
 				755A211B25E4EC390060084C /* Common */,
 				7547387B25D94804006180BC /* Extensions */,
@@ -153,8 +162,6 @@
 				75475E4F25E675CE00CD9A80 /* Managers */,
 				758FCF3625DD7DD1004AFCFF /* Models */,
 				75754EE225E01CB400374A42 /* Features */,
-				7547386F25D943D9006180BC /* MyFavoriteForm.entitlements */,
-				7547386825D943BB006180BC /* Info.plist */,
 			);
 			path = MyFavoriteForm;
 			sourceTree = "<group>";
@@ -185,6 +192,7 @@
 				759796E225E8FD2100BD9B4F /* UIEdgeInsets+Ex.swift */,
 				7561974A25F3AAAC0040CA25 /* Date+Ex.swift */,
 				75F7579025F4E91E00DFE782 /* NotificationName+Ex.swift */,
+				75BEB8DE25FD182A00A36C2D /* String+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -195,6 +203,7 @@
 				75475E5025E675F200CD9A80 /* DefaultsManager.swift */,
 				75475E5625E6812B00CD9A80 /* FoodFileManager.swift */,
 				75C2538425EBC246003244D0 /* CurrentAndNeedingEnergy.swift */,
+				75BEB8DA25FB9A0F00A36C2D /* ProfileDataHealthKit.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -204,6 +213,7 @@
 			children = (
 				75475E6025E69B1900CD9A80 /* AlertForWater.swift */,
 				75F7579325F4FCB100DFE782 /* ErrorAlert.swift */,
+				75BEB8D725FB88D800A36C2D /* AuthoriseAlertHealthKit.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -264,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				7547386325D943BA006180BC /* Assets.xcassets */,
+				7547386825D943BB006180BC /* Info.plist */,
 			);
 			path = Resourses;
 			sourceTree = "<group>";
@@ -371,6 +382,7 @@
 				75C2538125EBABD0003244D0 /* FoodModelFromFileManager.swift */,
 				75475E4525E57C8D00CD9A80 /* Logic.swift */,
 				75C2538725EBC2D1003244D0 /* CurrentValueFromFM.swift */,
+				7573A42225FA348000512262 /* HealthKitSetup.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -547,7 +559,9 @@
 			files = (
 				758FCF4325DD9FCA004AFCFF /* ArcaProgressView.swift in Sources */,
 				75C2538525EBC246003244D0 /* CurrentAndNeedingEnergy.swift in Sources */,
+				75BEB8DF25FD182A00A36C2D /* String+Ex.swift in Sources */,
 				758FCF4925DDA0F6004AFCFF /* WaterTripleBars.swift in Sources */,
+				75BEB8D825FB88D800A36C2D /* AuthoriseAlertHealthKit.swift in Sources */,
 				75475E3C25E501FA00CD9A80 /* BasicViewThreeStack.swift in Sources */,
 				7547385F25D943B8006180BC /* AuthViewController.swift in Sources */,
 				75F7579425F4FCB100DFE782 /* ErrorAlert.swift in Sources */,
@@ -567,6 +581,7 @@
 				75754EFB25E03EF400374A42 /* TabBarController.swift in Sources */,
 				75B8C41C25DBCA78004EA823 /* BasicView.swift in Sources */,
 				75475E5725E6812B00CD9A80 /* FoodFileManager.swift in Sources */,
+				7573A42325FA348000512262 /* HealthKitSetup.swift in Sources */,
 				755A213525E4FFBE0060084C /* BasicViewOneStack.swift in Sources */,
 				75C6893025E2A7CA00FB4DA2 /* BasicPersonView.swift in Sources */,
 				75475E5125E675F200CD9A80 /* DefaultsManager.swift in Sources */,
@@ -589,6 +604,7 @@
 				75B8C42325DBCAAA004EA823 /* CustomAuthView.swift in Sources */,
 				75475E3F25E503CE00CD9A80 /* MainViewAddProduct.swift in Sources */,
 				75754EEB25E026E600374A42 /* WaterProgress+Label.swift in Sources */,
+				75BEB8DB25FB9A0F00A36C2D /* ProfileDataHealthKit.swift in Sources */,
 				75754F0025E03F4B00374A42 /* PersonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -732,7 +748,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KT9QPL7XPR;
-				INFOPLIST_FILE = MyFavoriteForm/Info.plist;
+				INFOPLIST_FILE = MyFavoriteForm/Resourses/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -741,7 +757,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -754,7 +770,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KT9QPL7XPR;
-				INFOPLIST_FILE = MyFavoriteForm/Info.plist;
+				INFOPLIST_FILE = MyFavoriteForm/Resourses/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -763,7 +779,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

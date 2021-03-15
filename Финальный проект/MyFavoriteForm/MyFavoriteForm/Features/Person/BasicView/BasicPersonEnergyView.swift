@@ -9,6 +9,10 @@ import UIKit
 import SnapKit
 
 class BasicPersonEnergyView: UIView {
+    // MARK: - Properties
+    private let width: Float = 50
+    private let myOffset: Float = 20
+    
     // MARK: - GUI variables
     private lazy var topLabel: UILabel = {
         let label = UILabel()
@@ -56,14 +60,14 @@ class BasicPersonEnergyView: UIView {
             make.top.left.right.equalToSuperview()
         }
         self.bottomLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.topLabel.snp.bottom).offset(20)
+            make.top.equalTo(self.topLabel.snp.bottom).offset(self.myOffset)
             make.left.right.bottom.equalToSuperview()
-            make.width.equalTo(50)
+            make.width.equalTo(self.width)
         }
         self.textField.snp.makeConstraints { (make) in
-            make.top.equalTo(self.topLabel.snp.bottom).offset(20)
+            make.top.equalTo(self.topLabel.snp.bottom).offset(self.myOffset)
             make.left.right.bottom.equalToSuperview()
-            make.width.equalTo(50)
+            make.width.equalTo(self.width)
         }
     }
     
@@ -86,5 +90,3 @@ class BasicPersonEnergyView: UIView {
         }
     }
 }
-
-

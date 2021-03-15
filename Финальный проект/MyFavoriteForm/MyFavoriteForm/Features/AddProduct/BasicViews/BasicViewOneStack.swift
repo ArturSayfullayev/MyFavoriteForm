@@ -56,6 +56,7 @@ class BasicViewOneStack: UIView {
             make.height.equalTo(30)
         }
     }
+    
     // MARK: - Setter
     func setLabelText(text: String) {
         self.label.text = text

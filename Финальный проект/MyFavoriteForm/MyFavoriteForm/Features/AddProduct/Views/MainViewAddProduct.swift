@@ -15,6 +15,7 @@ class MainViewAddProduct: UIView {
     
     // MARK: - Properties
     private let edgeInsets = UIEdgeInsets(top: 50, left: 30, bottom: 0, right: 30)
+    private let myOffset: Float = 40
     
     // MARK: - GUI Properties
     private lazy var closeButton: UIButton = {
@@ -92,7 +93,6 @@ class MainViewAddProduct: UIView {
                           self.makePFC,
                           self.makeCalories,
                           self.addButton])
-   
         self.constraints()
     }
     
@@ -107,9 +107,9 @@ class MainViewAddProduct: UIView {
     func getValuesForNewProduct() -> FoodModelFromFileManager.Menu? {
         let tuple = self.makePFC.getValuesFromTextField()
         guard let name = self.makeName.getTextFromTextField(),
-              let protein = tuple.protein,
-              let fats = tuple.fats,
-              let carbohydrates = tuple.carbohydrates,
+              let protein = tuple.protein?.swapSymbol(),
+              let fats = tuple.fats?.swapSymbol(),
+              let carbohydrates = tuple.carbohydrates?.swapSymbol(),
               let calories = self.makeCalories.getTextFromTextField() else { return nil }
         return FoodModelFromFileManager.Menu(name: name,
                                              proteins: protein,
@@ -128,11 +128,11 @@ class MainViewAddProduct: UIView {
             make.top.left.right.equalToSuperview().inset(self.edgeInsets)
         }
         self.makeName.snp.makeConstraints { (make) in
-            make.top.equalTo(self.mainInfoLabel.snp.bottom).offset(40)
+            make.top.equalTo(self.mainInfoLabel.snp.bottom).offset(self.myOffset)
             make.left.right.equalToSuperview().inset(self.edgeInsets)
         }
         self.additionalInfoLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.makeName.snp.bottom).offset(40)
+            make.top.equalTo(self.makeName.snp.bottom).offset(self.myOffset)
             make.left.right.equalToSuperview().inset(self.edgeInsets)
         }
         self.makePFC.snp.makeConstraints { (make) in
@@ -140,7 +140,7 @@ class MainViewAddProduct: UIView {
             make.left.right.equalToSuperview().inset(self.edgeInsets)
         }
         self.makeCalories.snp.makeConstraints { (make) in
-            make.top.equalTo(self.makePFC.snp.bottom).offset(40)
+            make.top.equalTo(self.makePFC.snp.bottom).offset(self.myOffset)
             make.left.right.equalToSuperview().inset(self.edgeInsets)
         }
         self.addButton.snp.makeConstraints { (make) in

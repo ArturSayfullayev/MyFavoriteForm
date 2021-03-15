@@ -24,15 +24,14 @@ class AddMenuViewController: BasicScrollViewController {
                                                     carbohydrates: presentMenu.carbohydrates,
                                                     calories: presentMenu.calories))
         }
-        
         view.addButtonClosure = { [ weak self ] in
             guard let self = self,
                   let mass = self.mainView.setTextFromTextField() else { return }
             if mass == "" {
                 ErrorAlert.shared.error(message: "Введите массу блюда!", viewController: self)
             } else {
-            Logic.shared.setEnergyFromFood(mass: mass)
-            self.navigationController?.popToRootViewController(animated: true)
+                Logic.shared.setEnergyFromFood(mass: mass)
+                self.navigationController?.popToRootViewController(animated: true)
             }
         }
         return view

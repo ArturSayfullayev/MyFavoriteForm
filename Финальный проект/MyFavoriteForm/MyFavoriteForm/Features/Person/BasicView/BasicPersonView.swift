@@ -9,6 +9,10 @@ import UIKit
 import SnapKit
 
 class BasicPersonView: UIView {
+    // MARK: - Properties
+    private let width: Float = 150
+    private let myOffset: Float = 30
+    
     // MARK: - GUI variables
     private lazy var leftLabel: UILabel = {
         let label = UILabel()
@@ -27,6 +31,7 @@ class BasicPersonView: UIView {
         textField.isHidden = true
         return textField
     }()
+    
     // MARK: - Inizialization
     override init (frame: CGRect) {
         super.init(frame: frame)
@@ -53,13 +58,13 @@ class BasicPersonView: UIView {
         }
         self.rightLabel.snp.makeConstraints { (make) in
             make.top.right.bottom.equalToSuperview()
-            make.left.greaterThanOrEqualTo(self.leftLabel.snp.right).offset(30)
-            make.width.equalTo(150)
+            make.left.greaterThanOrEqualTo(self.leftLabel.snp.right).offset(self.myOffset)
+            make.width.equalTo(self.width)
         }
         self.textField.snp.makeConstraints { (make) in
             make.top.right.bottom.equalToSuperview()
-            make.left.greaterThanOrEqualTo(self.leftLabel.snp.right).offset(30)
-            make.width.equalTo(150)
+            make.left.greaterThanOrEqualTo(self.leftLabel.snp.right).offset(self.myOffset)
+            make.width.equalTo(self.width)
         }
     }
     

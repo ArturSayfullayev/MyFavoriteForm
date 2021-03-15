@@ -15,6 +15,7 @@ class AddMenuView: UIView {
     
     // MARK: - Properties
     private let edgeInsets = UIEdgeInsets(top: 40, left: 30, bottom: 0, right: 30)
+    private let myOffset: Float = 30
     
     // MARK: - GUI Properties
     private lazy var titleLabel: UILabel = {
@@ -87,7 +88,6 @@ class AddMenuView: UIView {
                           self.textField,
                           self.addButton])
         self.constraints()
-        
     }
     
     // MARK: - Methods
@@ -117,15 +117,15 @@ class AddMenuView: UIView {
             make.top.left.right.equalToSuperview().inset(self.edgeInsets)
         }
         self.mainLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(30)
+            make.top.equalTo(self.titleLabel.snp.bottom).offset(self.myOffset)
             make.left.right.equalToSuperview().inset(self.edgeInsets)
         }
         self.additionalLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.mainLabel.snp.bottom).offset(30)
+            make.top.equalTo(self.mainLabel.snp.bottom).offset(self.myOffset)
             make.left.equalToSuperview().inset(self.edgeInsets)
         }
         self.textField.snp.makeConstraints { (make) in
-            make.left.greaterThanOrEqualTo(self.additionalLabel.snp.right).offset(30)
+            make.left.greaterThanOrEqualTo(self.additionalLabel.snp.right).offset(self.myOffset)
             make.right.equalToSuperview().inset(self.edgeInsets)
             make.centerY.equalTo(self.additionalLabel.snp.centerY)
             make.height.equalTo(self.additionalLabel.snp.height)

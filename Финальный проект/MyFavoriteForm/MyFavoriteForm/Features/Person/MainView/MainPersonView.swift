@@ -11,6 +11,11 @@ import SnapKit
 class MainPersonView: UIView {
     // MARK: Properties
     private let edgeInsets = UIEdgeInsets(all: 12)
+    private let buttonInsets = UIEdgeInsets(all: 20)
+    private let containerInsets = UIEdgeInsets(all: 30)
+    private let heightFloat: Float = 25
+    private let width: Float = 150
+    private let myOffset: Float = 20
     
     var setEditPersonClosure: (() -> Void)?
     var setDonePersonClosure: ((Profile) -> Void)?
@@ -238,39 +243,39 @@ class MainPersonView: UIView {
     // MARK: - Constraints
     private func constraints() {
         self.editButton.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(20)
-            make.right.equalToSuperview().inset(20)
-            make.height.equalTo(25)
-            make.width.equalTo(150)
+            make.top.equalToSuperview().offset(self.myOffset)
+            make.right.equalToSuperview().inset(self.buttonInsets)
+            make.height.equalTo(self.heightFloat)
+            make.width.equalTo(self.width)
         }
         self.doneButton.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(20)
-            make.right.equalToSuperview().inset(20)
-            make.height.equalTo(25)
-            make.width.equalTo(150)
+            make.top.equalToSuperview().offset(self.myOffset)
+            make.right.equalToSuperview().inset(self.buttonInsets)
+            make.height.equalTo(self.heightFloat)
+            make.width.equalTo(self.width)
         }
         self.mainContainerView.snp.updateConstraints { (make) in
-            make.top.equalTo(self.doneButton.snp.bottom).offset(20)
-            make.left.right.equalToSuperview().inset(30)
+            make.top.equalTo(self.doneButton.snp.bottom).offset(self.myOffset)
+            make.left.right.equalToSuperview().inset(self.containerInsets)
         }
         self.mainStack.snp.updateConstraints { (make) in
             make.edges.equalToSuperview().inset(self.edgeInsets)
         }
         self.additionalInfoLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.mainContainerView.snp.bottom).offset(20)
-            make.left.right.equalToSuperview().inset(30)
-            make.height.equalTo(25)
+            make.top.equalTo(self.mainContainerView.snp.bottom).offset(self.myOffset)
+            make.left.right.equalToSuperview().inset(self.containerInsets)
+            make.height.equalTo(self.heightFloat)
         }
         self.containerViewForTopStack.snp.updateConstraints { (make) in
             make.top.equalTo(self.additionalInfoLabel.snp.bottom).offset(10)
-            make.left.right.equalToSuperview().inset(30)
+            make.left.right.equalToSuperview().inset(self.containerInsets)
         }
         self.topStack.snp.updateConstraints { (make) in
             make.edges.equalToSuperview().inset(self.edgeInsets)
         }
         self.containerViewForBottomStack.snp.updateConstraints { (make) in
             make.top.equalTo(self.containerViewForTopStack.snp.bottom).offset(30)
-            make.left.right.bottom.equalToSuperview().inset(30)
+            make.left.right.bottom.equalToSuperview().inset(self.containerInsets)
         }
         self.bottomStack.snp.updateConstraints { (make) in
             make.edges.equalToSuperview().inset(self.edgeInsets)
@@ -280,7 +285,7 @@ class MainPersonView: UIView {
     // MARK: - Methods
     @objc private func dateFromDatePicker() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
+        formatter.dateFormat = Logic.shared.formateDateDMY
         self.age.textField.text = formatter.string(from: self.datePicker.date)
     }
     @objc private func actionEditPerson() {
@@ -310,7 +315,7 @@ class MainPersonView: UIView {
     }
     private func setDateToDatePicker() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
+        formatter.dateFormat = Logic.shared.formateDateDMY
         guard let dateOfBirthday = self.age.textField.text,
               let date = formatter.date(from: dateOfBirthday) else { return }
         self.datePicker.date = date
@@ -390,6 +395,7 @@ class MainPersonView: UIView {
             self.doneButton.isHidden = false
         }
     }
+    
     // MARK: - Setter
     func setPersonValue(person: Profile) {
         self.name.setValues(text: person.name)

@@ -21,21 +21,21 @@ class BasicViewThreeStack: UIView {
     private lazy var proteinView: BasicViewOneStack = {
         let protein = BasicViewOneStack()
         protein.setLabelText(text: "Белки:")
-        protein.setNumPad(keyboardType: .numberPad)
+        protein.setNumPad(keyboardType: .numbersAndPunctuation)
         
         return protein
     }()
     private lazy var fatsView: BasicViewOneStack = {
         let fats = BasicViewOneStack()
         fats.setLabelText(text: "Жиры:")
-        fats.setNumPad(keyboardType: .numberPad)
+        fats.setNumPad(keyboardType: .numbersAndPunctuation)
         
         return fats
     }()
     private lazy var carbohydrateView: BasicViewOneStack = {
         let carbohydrate = BasicViewOneStack()
         carbohydrate.setLabelText(text: "Углеводы:")
-        carbohydrate.setNumPad(keyboardType: .numberPad)
+        carbohydrate.setNumPad(keyboardType: .numbersAndPunctuation)
         
         return carbohydrate
     }()

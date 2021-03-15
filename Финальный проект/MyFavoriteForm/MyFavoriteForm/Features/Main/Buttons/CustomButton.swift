@@ -9,6 +9,9 @@ import UIKit
 import SnapKit
 
 class CustomButton: UIButton {
+    // MARK: - Properties
+    private let edgeInsets = UIEdgeInsets(all: 10)
+    
     // MARK: - GUI Properties
     private lazy var mainImage: UIImageView = {
         let image = UIImageView()
@@ -42,7 +45,6 @@ class CustomButton: UIButton {
         self.backgroundColor = UIColor(named: "custom")
         self.addSubviews([self.mainImage,
                           self.label])
-        
         self.constraints()
         self.setLayers()
     }
@@ -57,11 +59,11 @@ class CustomButton: UIButton {
     // MARK: - Constraints
     private func constraints() {
         self.mainImage.snp.makeConstraints { (make) in
-            make.top.left.bottom.equalToSuperview().inset(10)
+            make.top.left.bottom.equalToSuperview().inset(self.edgeInsets)
             make.width.height.equalTo(50)
         }
         self.label.snp.makeConstraints { (make) in
-            make.top.right.bottom.equalToSuperview().inset(10)
+            make.top.right.bottom.equalToSuperview().inset(self.edgeInsets)
             make.left.equalTo(self.mainImage.snp.right).offset(40)
         }
     }

@@ -25,6 +25,11 @@ class AddProductViewController: BasicScrollViewController {
                 menu.carbohydrates == "" ||
                 menu.calories == "" {
                 ErrorAlert.shared.error(message: "Заполниите все поля!", viewController: self)
+                
+            } else if self.onlyLiteralChek(text: menu.proteins) ||
+                      self.onlyLiteralChek(text: menu.fats) ||
+                      self.onlyLiteralChek(text: menu.carbohydrates) {
+                ErrorAlert.shared.error(message: "Некорректные символы значений БЖУ!", viewController: self)
             } else {
                 NotificationCenter.default.post(name: .productName,
                                                 object: nil,
@@ -42,6 +47,21 @@ class AddProductViewController: BasicScrollViewController {
         self.mainScroll.addSubview(self.mainView)
         self.constraints()
     }
+    
+    // MARK: - Methods
+    private func onlyLiteralChek(text: String) -> Bool {
+        var flag = true
+        text.forEach {
+            if $0.isNumber || $0 == "."  {
+                flag = false
+            } else {
+                flag = true
+            }
+        }
+        Swift.debugPrint(flag)
+        return flag
+    }
+    
     // MARK: - Constraints
     private func constraints() {
         self.mainView.snp.makeConstraints { (make) in

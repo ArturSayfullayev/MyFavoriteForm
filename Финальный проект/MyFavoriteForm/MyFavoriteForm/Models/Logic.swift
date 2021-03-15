@@ -8,7 +8,7 @@
 import Foundation
 
 class Logic {
-    // MARK: - Struct
+    // MARK: - Structures
     struct AllProperties {
         var calories: Double
         var proteins: Double

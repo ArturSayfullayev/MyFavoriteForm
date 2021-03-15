@@ -160,6 +160,7 @@ class CustomAuthView: UIView {
             make.height.equalTo(70)
         }
     }
+    
     // MARK: - Methods
     @objc private func dateFromDatePicker() {
         self.age.textField.text = self.datePicker.date.formatter()

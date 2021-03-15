@@ -23,7 +23,7 @@ class ErrorAlert {
                 handler: nil ))
         
         viewController.present(alert,
-                                animated: true,
-                                completion: nil)
+                               animated: true,
+                               completion: nil)
     }
 }

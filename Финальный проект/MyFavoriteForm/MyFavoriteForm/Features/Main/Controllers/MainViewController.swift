@@ -25,6 +25,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         Logic.shared.setCalories(bool: true)
         Logic.shared.setWater(bool: true)
         Logic.shared.setCurentValuesFromFM()
@@ -37,8 +38,8 @@ class MainViewController: UIViewController {
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
-        for i in view.subviews {
-            i.removeFromSuperview()
+        for view in view.subviews {
+            view.removeFromSuperview()
         }
         
         self.mainView = WaterTripleBars(frame: CGRect(x: 0,
@@ -49,6 +50,8 @@ class MainViewController: UIViewController {
                                self.secondView])
         self.setBackgroundColor()
         self.setConstraints()
+        
+        self.addTextLabel()
     }
     
     private func setConstraints() {
@@ -68,5 +71,13 @@ class MainViewController: UIViewController {
     }
     private func addAlertWater() {
         Alert.shared.addWater(viewController: self)
+    }
+    private func addTextLabel() {
+        ProfileDataHealthKit.getTodaysSteps { (steps) in
+            self.secondView.setLabelStep(text: String(Int(steps)))
+        }
+        ProfileDataHealthKit.getTodaysEnergy { (energy) in
+            self.secondView.setLabelEnergy(text: String(Int(energy)))
+        }
     }
 }

@@ -31,6 +31,7 @@ class AuthViewController: BasicScrollViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.setBackgroundColor()
      
@@ -38,6 +39,10 @@ class AuthViewController: BasicScrollViewController {
        
         self.constraits()
         self.setPropertiesForPickers()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.authorizeHealthKit()
     }
     
     // MARK: - Methods
@@ -54,6 +59,10 @@ class AuthViewController: BasicScrollViewController {
         self.authView.sex.textField.delegate = self
         self.authView.target.textField.delegate = self
         self.authView.action.textField.delegate = self
+    }
+    
+    private func authorizeHealthKit() {
+        HeathKitAlert.shared.alertHealthKit(viewController: self)
     }
 
     // MARK: - Constraints

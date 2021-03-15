@@ -9,6 +9,9 @@ import UIKit
 import SnapKit
 
 class WaterProgressLabel: UIView {
+    // MARK: - Properties
+    private let edgeInsets = UIEdgeInsets(all: 10)
+    
     // MARK: - GUI Properties
     private(set) lazy var waterProgress: PlainHorizontalProgressBar = {
         let progress = PlainHorizontalProgressBar()
@@ -44,13 +47,13 @@ class WaterProgressLabel: UIView {
     // MARK: - Canstraints
     private func constraints() {
         self.waterProgress.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().inset(10)
+            make.left.equalToSuperview().inset(self.edgeInsets)
             make.centerY.equalTo(self.label.snp.centerY)
             make.height.equalTo(25)
         }
         self.label.snp.makeConstraints { (make) in
             make.top.bottom.equalToSuperview()
-            make.right.equalToSuperview().inset(10)
+            make.right.equalToSuperview().inset(self.edgeInsets)
             make.left.equalTo(self.waterProgress.snp.right).offset(15)
             make.width.equalTo(100)
             make.height.equalTo(50)

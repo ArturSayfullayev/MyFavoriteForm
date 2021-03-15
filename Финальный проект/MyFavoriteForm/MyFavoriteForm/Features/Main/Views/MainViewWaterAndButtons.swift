@@ -9,12 +9,28 @@ import UIKit
 import SnapKit
 
 class MainViewWaterAndButtons: UIView {
+    // MARK: - Properties
+    private let edgeInsets = UIEdgeInsets(all: 30)
+    
     // MARK: - Closures
     var closureAction: (() -> Void)?
     var addWaterAction: (() -> Void)?
     
     // MARK: - GUI Properties
     private lazy var waterProgress = WaterProgressLabel()
+    private lazy var labelStep: UILabel = {
+        let label = UILabel()
+        label.isHidden = true
+        
+        return label
+    }()
+    
+    private lazy var labelEnergy: UILabel = {
+        let label = UILabel()
+        label.isHidden = true
+        
+        return label
+    }()
     
     private lazy var date: UILabel = {
         let date = UILabel()
@@ -56,7 +72,9 @@ class MainViewWaterAndButtons: UIView {
         self.addSubviews([self.waterProgress,
                           self.date,
                           self.customButton,
-                          self.customButtonWater])
+                          self.customButtonWater,
+                          self.labelStep,
+                          self.labelEnergy])
         
         self.constraints()
         
@@ -71,11 +89,19 @@ class MainViewWaterAndButtons: UIView {
         }
         self.customButton.snp.updateConstraints { (make) in
             make.top.equalTo(self.date.snp.bottom).offset(50)
-            make.left.right.equalToSuperview().inset(30)
+            make.left.right.equalToSuperview().inset(self.edgeInsets)
         }
         self.customButtonWater.snp.updateConstraints { (make) in
             make.top.equalTo(self.customButton.snp.bottom).offset(40)
-            make.left.right.equalToSuperview().inset(30)
+            make.left.right.equalToSuperview().inset(self.edgeInsets)
+        }
+        self.labelStep.snp.updateConstraints { (make) in
+            make.top.equalTo(self.customButtonWater.snp.bottom).offset(30)
+            make.left.right.equalToSuperview().inset(self.edgeInsets)
+        }
+        self.labelEnergy.snp.updateConstraints { (make) in
+            make.top.equalTo(self.labelStep.snp.bottom).offset(5)
+            make.left.right.equalToSuperview().inset(self.edgeInsets)
         }
     }
     
@@ -90,5 +116,17 @@ class MainViewWaterAndButtons: UIView {
     func setValuesWaterBar() {
         self.waterProgress.setTextWaterBar(text: "Вода(мл): \(Logic.shared.getCurrentWater())/\(Logic.shared.getWater())")
         self.waterProgress.waterProgress.setProgress(value: Logic.shared.getPercentWater())
+    }
+    func setLabelStep(text: String) {
+        self.labelStep.text = "Шагов: \(text)"
+        if text != "0" {
+            self.labelStep.isHidden = false
+        }
+    }
+    func setLabelEnergy(text: String) {
+        self.labelEnergy.text = "Сожжено калорий: \(text)"
+        if text != "0" {
+            self.labelEnergy.isHidden = false
+        }
     }
 }

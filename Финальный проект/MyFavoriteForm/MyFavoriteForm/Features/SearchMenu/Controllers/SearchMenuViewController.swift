@@ -34,17 +34,13 @@ class SearchMenuViewController: UITableViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationItem.rightBarButtonItem = self.addButton
         
-        self.setTableView()
-        self.setSearchBar()
-        self.setModelMenu()
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.addProduct),
                                                name: .productName,
                                                object: nil)
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
+        self.setTableView()
+        self.setSearchBar()
+        self.setModelMenu()
     }
 
     // MARK: - Table view data source
@@ -94,6 +90,7 @@ class SearchMenuViewController: UITableViewController {
               let product = userInfo["product"] as? FoodModelFromFileManager.Menu else { return }
         self.baseModel.insert(product, at: 0)
         self.searchBar.isActive = true
+        self.searchBar.isActive = false
     }
     
     @objc private func openAddProduct() {

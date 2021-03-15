@@ -11,6 +11,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let todayDate = Date().formatter()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
@@ -32,9 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 window.rootViewController = viewController
             } else {
                 // Если уже есть сохраненный профиль - проверяем дату и обнуляем текущие показания
-                let todayDate = Date().formatter()
                 let curentDate = Logic.shared.person?.curentDate.formatter()
-                if curentDate != todayDate {
+                if curentDate != self.todayDate {
                     Logic.shared.resetCurrentValues()
                 }
                 Logic.shared.writeValuesToFM()
@@ -48,6 +48,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func applicationWillResignActive(_ application: UIApplication) {
         DefaultsManager.shared.writeDataToUDWithCodable(for: Logic.shared.userKey, model: Logic.shared.person)
+        Logic.shared.writeValuesToFM()
+    }
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        let curentDate = Logic.shared.person?.curentDate.formatter()
+        if curentDate != self.todayDate {
+            Logic.shared.resetCurrentValues()
+        }
         Logic.shared.writeValuesToFM()
     }
 }

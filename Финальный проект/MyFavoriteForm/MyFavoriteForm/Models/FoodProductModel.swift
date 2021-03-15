@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 class FoodProductModel {
     // MARK: - Singleton
     static let shared = FoodProductModel()
@@ -16,29 +14,61 @@ class FoodProductModel {
     // MARK: - Properties
     var menu: [FoodModelFromFileManager.Menu] = [
         FoodModelFromFileManager.Menu(
-            name: "картофель", proteins: "1.71", fats: "0.1", carbohydrates: "18.21", calories: "200"),
+            name: "Картофель", proteins: "1.71", fats: "0.1", carbohydrates: "18.21", calories: "200"),
         FoodModelFromFileManager.Menu(
-            name: "курица", proteins: "12", fats: "20", carbohydrates: "15", calories: "200"),
+            name: "Шампиньоны свежие", proteins: "4.3", fats: "1.0", carbohydrates: "0.1", calories: "27"),
         FoodModelFromFileManager.Menu(
-            name: "свинина", proteins: "12", fats: "20", carbohydrates: "15", calories: "200"),
+            name: "Колбаса вар. молочная", proteins: "11.7", fats: "22.8", carbohydrates: "0.2", calories: "252"),
         FoodModelFromFileManager.Menu(
-            name: "макароны", proteins: "12", fats: "20", carbohydrates: "15", calories: "200"),
+            name: "Гречневая крупа", proteins: "13.0", fats: "3.0", carbohydrates: "68", calories: "340"),
         FoodModelFromFileManager.Menu(
-            name: "рис", proteins: "12", fats: "20", carbohydrates: "15", calories: "200"),
+            name: "Овсяная крупа", proteins: "12.3", fats: "6.1", carbohydrates: "59.5", calories: "342"),
         FoodModelFromFileManager.Menu(
-            name: "гречка", proteins: "12", fats: "20", carbohydrates: "15", calories: "200"),
+            name: "Овсяные хлопья(геркулес)", proteins: "12.5", fats: "6.2", carbohydrates: "61", calories: "352"),
         FoodModelFromFileManager.Menu(
-            name: "фалафель", proteins: "12", fats: "20", carbohydrates: "15", calories: "200"),
+            name: "Перловая крупа", proteins: "9.3", fats: "1.1", carbohydrates: "73.7", calories: "320"),
         FoodModelFromFileManager.Menu(
-            name: "йогурт", proteins: "12", fats: "20", carbohydrates: "15", calories: "200"),
+            name: "Рисовая крупа", proteins: "7.0", fats: "1.0", carbohydrates: "74.0", calories: "333"),
         FoodModelFromFileManager.Menu(
-            name: "томат", proteins: "12", fats: "20", carbohydrates: "15", calories: "200"),
+            name: "Масло сливочное 60%", proteins: "1.3", fats: "60.0", carbohydrates: "1.7", calories: "552"),
         FoodModelFromFileManager.Menu(
-            name: "огурец", proteins: "12", fats: "20", carbohydrates: "15", calories: "200"),
+            name: "Масло оливковое", proteins: "0", fats: "99.8", carbohydrates: "0", calories: "898"),
         FoodModelFromFileManager.Menu(
-            name: "свекла", proteins: "12", fats: "20", carbohydrates: "15", calories: "200"),
+            name: "Кефир 1%", proteins: "2.8", fats: "1.0", carbohydrates: "4.0", calories: "40"),
         FoodModelFromFileManager.Menu(
-            name: "капуста", proteins: "12", fats: "20", carbohydrates: "15", calories: "200")]
+            name: "Молоко 3.2%", proteins: "2.9", fats: "3.2", carbohydrates: "4.7", calories: "59"),
+        FoodModelFromFileManager.Menu(
+            name: "Молоко козье", proteins: "3.6", fats: "3.3", carbohydrates: "4.8", calories: "68"),
+        FoodModelFromFileManager.Menu(
+            name: "Блины", proteins: "6.1", fats: "12.3", carbohydrates: "26", calories: "233"),
+        FoodModelFromFileManager.Menu(
+            name: "Лапша домашняя", proteins: "12.0", fats: "3.7", carbohydrates: "60.1", calories: "322"),
+        FoodModelFromFileManager.Menu(
+            name: "Макароны(в.с.)", proteins: "10.4", fats: "1.1", carbohydrates: "69.7", calories: "337"),
+        FoodModelFromFileManager.Menu(
+            name: "Мука пшеничная(в.с.)", proteins: "10.3", fats: "1.1", carbohydrates: "68.9", calories: "334"),
+        FoodModelFromFileManager.Menu(
+            name: "Пельмени(гов. + св.)", proteins: "11.0", fats: "14.0", carbohydrates: "25.0", calories: "270"),
+        FoodModelFromFileManager.Menu(
+            name: "Спагетти", proteins: "10.4", fats: "1.1", carbohydrates: "71.5", calories: "344"),
+        FoodModelFromFileManager.Menu(
+            name: "Баранина", proteins: "15.6", fats: "16.3", carbohydrates: "0", calories: "209"),
+        FoodModelFromFileManager.Menu(
+            name: "Ветчина", proteins: "14.0", fats: "24.0", carbohydrates: "0", calories: "270"),
+        FoodModelFromFileManager.Menu(
+            name: "Говядина", proteins: "18.9", fats: "12.4", carbohydrates: "0", calories: "187"),
+        FoodModelFromFileManager.Menu(
+            name: "Котлеты куриные", proteins: "18.2", fats: "10.4", carbohydrates: "13.8", calories: "222"),
+        FoodModelFromFileManager.Menu(
+            name: "Котлеты свиные", proteins: "13.6", fats: "45.7", carbohydrates: "0", calories: "466"),
+        FoodModelFromFileManager.Menu(
+            name: "Куриная грудка", proteins: "23.6", fats: "1.9", carbohydrates: "0.4", calories: "113"),
+        FoodModelFromFileManager.Menu(
+            name: "Апельсин", proteins: "0.9", fats: "0.2", carbohydrates: "8.1", calories: "36"),
+        FoodModelFromFileManager.Menu(
+            name: "Банан", proteins: "1.5", fats: "0.2", carbohydrates: "21.8", calories: "95"),
+        FoodModelFromFileManager.Menu(
+            name: "Творог 1%", proteins: "16.3", fats: "1.0", carbohydrates: "1.3", calories: "79")]
     
     // MARK: - Methods
     func setMenuFromFM(menu: [FoodModelFromFileManager.Menu]) {
